@@ -40,11 +40,12 @@ const Navigation = () => {
   const onClick = (href: string) => {
     router.push(href);
     setIsOpen(false);
+    console.log();
   };
 
   if (isMobile) {
     return (
-      <Sheet>
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger>
           <Button
             variant="outline"
