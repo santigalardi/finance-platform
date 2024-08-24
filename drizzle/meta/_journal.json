@@ -15,6 +15,13 @@
       "when": 1724524758088,
       "tag": "0001_cooing_slipstream",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1724529273917,
+      "tag": "0002_purple_senator_kelly",
+      "breakpoints": true
     }
   ]
 }
