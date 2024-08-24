@@ -74,7 +74,7 @@ const AccountForm = ({
         <Button className="w-full" disabled={disabled}>
           {id ? 'Save changes' : 'Create account'}
         </Button>
-        {!!id ?? (
+        {!!id && (
           <Button
             type="button"
             disabled={disabled}
