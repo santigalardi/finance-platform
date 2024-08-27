@@ -16,9 +16,8 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from '@/components/ui/form';
-import { convertAmountToMiliunits } from '@/lib/utils';
+import { cn, convertAmountToMiliunits } from '@/lib/utils';
 
 const formSchema = z.object({
   date: z.coerce.date(),
@@ -87,6 +86,7 @@ const TransactionForm = ({
           control={form.control}
           render={({ field }) => (
             <FormItem>
+              <FormLabel>Date</FormLabel>
               <FormControl>
                 <DatePicker
                   value={field.value}
@@ -121,7 +121,12 @@ const TransactionForm = ({
           control={form.control}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Category</FormLabel>
+              <div className="flex items-center space-x-1">
+                <FormLabel>Category</FormLabel>
+                <p className="text-sm text-muted-foreground font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                  (Optional)
+                </p>
+              </div>
               <FormControl>
                 <Select
                   placeholder="Select a category"
@@ -172,13 +177,19 @@ const TransactionForm = ({
           control={form.control}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Notes</FormLabel>
+              <div className="flex items-center space-x-1">
+                <FormLabel>Notes</FormLabel>
+                <p className="text-sm text-muted-foreground font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                  (Optional)
+                </p>
+              </div>
+
               <FormControl>
                 <Textarea
                   {...field}
                   value={field.value ?? ''}
                   disabled={disabled}
-                  placeholder="Optional notes"
+                  placeholder="Add notes"
                 />
               </FormControl>
             </FormItem>
