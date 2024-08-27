@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, Plus } from 'lucide-react';
 import { columns } from './columns';
-import { DataTable } from '@/components/data-table';
+import { DataTable } from '@/components/DataTable';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const AccountsPage = () => {

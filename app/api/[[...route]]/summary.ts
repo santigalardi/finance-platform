@@ -7,7 +7,6 @@ import { subDays, parse, differenceInDays } from 'date-fns';
 import { clerkMiddleware, getAuth } from '@hono/clerk-auth';
 import { and, desc, eq, gte, lt, lte, sql, sum } from 'drizzle-orm';
 import { calculatePercentageChange, fillMissingDays } from '@/lib/utils';
-import { group } from 'console';
 
 const app = new Hono().get(
   '/',
@@ -74,8 +73,8 @@ const app = new Hono().get(
     );
     const [lastPeriod] = await fetchFinancialData(
       auth.userId,
-      startDate,
-      endDate
+      lastPeriodStart,
+      lastPeriodEnd
     );
 
     const incomeChange = calculatePercentageChange(
