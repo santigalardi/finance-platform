@@ -48,6 +48,7 @@ interface DataCardProps extends BoxVariants, IconVariants {
   value?: number;
   dateRange: string;
   percentageChange?: number;
+  isExpense?: boolean;
 }
 
 export const DataCard = ({
@@ -57,6 +58,7 @@ export const DataCard = ({
   variant,
   dateRange,
   percentageChange = 0,
+  isExpense = false,
 }: DataCardProps) => {
   return (
     <Card className="border-none drop-shadow-sm">
@@ -85,8 +87,13 @@ export const DataCard = ({
         <p
           className={cn(
             'text-muted-foreground text-sm line-clamp-1',
-            percentageChange > 0 && 'text-emerald-500',
-            percentageChange < 0 && 'text-rose-500'
+            isExpense
+              ? percentageChange > 0
+                ? 'text-rose-500'
+                : 'text-emerald-500'
+              : percentageChange > 0
+              ? 'text-emerald-500'
+              : 'text-rose-500'
           )}
         >
           {formatPercentage(percentageChange, { addPrefix: true })} from last

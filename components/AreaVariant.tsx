@@ -11,7 +11,7 @@ import {
 import { CustomTooltip } from '@/components/CustomTooltip';
 
 type Props = {
-  data?: {
+  data: {
     date: string;
     income: number;
     expenses: number;
@@ -19,8 +19,6 @@ type Props = {
 };
 
 export const AreaVariant = ({ data }: Props) => {
-  console.log(data);
-
   return (
     <ResponsiveContainer width="100%" height={350}>
       <AreaChart data={data}>

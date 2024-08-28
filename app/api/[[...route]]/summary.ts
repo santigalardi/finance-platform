@@ -104,7 +104,6 @@ const app = new Hono().get(
         and(
           accountId ? eq(transactions.accountId, accountId) : undefined,
           eq(accounts.userId, auth.userId),
-          lt(transactions.amount, 0),
           gte(transactions.date, startDate),
           lte(transactions.date, endDate)
         )
