@@ -65,5 +65,11 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-color: #e6eaed;
   }
+}
+
+.cl-avatarBox {
+  width: 2.25rem;
+  height: 2.25rem;
 }

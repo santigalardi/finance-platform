@@ -11,7 +11,7 @@ const WelcomeMsg = () => {
         {user?.firstName} 👋🏼
       </h2>
       <p className="text-sm lg:text-base text-[#89b6fd]">
-        This is your Financial Overvier Report
+        This is your Financial Overview Report
       </p>
     </div>
   );
