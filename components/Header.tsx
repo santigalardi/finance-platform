@@ -1,6 +1,7 @@
 import { UserButton, ClerkLoading, ClerkLoaded } from '@clerk/nextjs';
 import HeaderLogo from '@/components/HeaderLogo';
 import Navigation from '@/components/Navigation';
+import { Filters } from '@/components/Filters';
 import { Loader2 } from 'lucide-react';
 import WelcomeMsg from './WelcomeMsg';
 
@@ -23,6 +24,7 @@ const Header = () => {
           </div>
         </div>
         <WelcomeMsg />
+        <Filters />
       </div>
     </header>
   );
